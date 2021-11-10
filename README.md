@@ -5,6 +5,7 @@ It consist the all python code of a game called tic tac toe
 
 from IPython.display import clear_output
 #FIRST WE CREATE A BOARD TO PLAY
+
 def display_board(board):
     clear_output()  # Remember, this only works in jupyter!
     
@@ -26,10 +27,11 @@ board=['#','X','O','X','O','X','O','X','O','X']
 display_board(board)
 
 
-#NEXT we will define a function who take input from the plyer and assign their markers to 'x' or 'o'
+"""NEXT we will define a function who take input from the plyer and assign their markers to 'x' or 'o'"""
+
 
 def player_input():
-    
+
     marker = ''
     
     while marker !='x' and marker !='o':
@@ -47,8 +49,8 @@ def player_input():
     player_input()
     
     
- #NEXT we will write a function that takes in the board list object, a marker ('X' or 'O'), 
-#and a desired position (number 1-9) and assigns it to the board.
+ """NEXT we will write a function that takes in the board list object, a marker ('X' or 'O'), 
+and a desired position (number 1-9) and assigns it to the board."""
 
 
 def place_marker(board, marker, position):
@@ -57,7 +59,7 @@ def place_marker(board, marker, position):
     
     
  
- #NEXT We will write Write a function that takes in a board and checks to see if someone has won.
+ """NEXT We will write Write a function that takes in a board and checks to see if someone has won."""
  
  
 def win_check(board,mark):
@@ -74,8 +76,8 @@ def win_check(board,mark):
 win_check(board,'X')
 
 
-#NEXT we will write a function that uses the random module to randomly decide which player goes first. You may want to lookup random.randint() 
-#Return a string of which player went first.
+"""NEXT we will write a function that uses the random module to randomly decide which player goes first. You may want to lookup random.randint() 
+Return a string of which player went first."""
 
 import random
 
@@ -85,13 +87,13 @@ def choose_first():
     else:
         return 'Player 1'
         
- #NEXT we will Write a function that returns a boolean indicating whether a space on the board is freely available.
+ """NEXT we will Write a function that returns a boolean indicating whether a space on the board is freely available."""
 
 def space_check(board,position):
     return board[position]==' '
     
     
-#NEXT we will Write a function that checks if the board is full and returns a boolean value. True if full, False otherwise.
+"""NEXT we will Write a function that checks if the board is full and returns a boolean value. True if full, False otherwise."""
 def full_board_check(board):
     for i in range(1,10):
         if space_check(board, i):
@@ -99,8 +101,8 @@ def full_board_check(board):
     return True
     
     
-#NEXT we will Write a function that asks for a player's next position (as a number 1-9) and then uses the function from step 6 to check if its a free position. 
-#If it is, then return the position for later use.
+"""NEXT we will Write a function that asks for a player's next position (as a number 1-9) and then uses the function from step 6 to check if its a free position. 
+If it is, then return the position for later use."""
 
 def player_choice(board):
     position = 0
@@ -112,14 +114,14 @@ def player_choice(board):
     
     
     
-#NEXT we will Write a function that asks the player if they want to play again and returns a boolean True if they do want to play again.
+"""NEXT we will Write a function that asks the player if they want to play again and returns a boolean True if they do want to play again."""
 
 def replay():
     
     return input('Do you want to play again? Enter Yes or No: ').lower().startswith('y')
     
     
- #the final touch code algorithm to implement all functions   
+"""the final touch code algorithm to implement all functions"""   
     
 print("welcome to the game tic tac toe")
 
